@@ -13,7 +13,7 @@
 
     <?php
 
-    include("quizz-app-Dameris\Parte_1\php\logic.php");
+    include("quizz-app-Dameris/Parte_1/php/logic.php");
 
     // Procesar respuestas
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -26,7 +26,7 @@
     }
     ?>
 
-    <a href="quizz-app-Dameris\Parte_1\index.html">Repetir Cuestionario</a>
+    <a href="quizz-app-Dameris/Parte_1/index.html">Repetir Cuestionario</a>
 
 </body>
 
