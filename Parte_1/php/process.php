@@ -12,7 +12,6 @@
     <h1>Resultados del Cuestionario</h1>
 
     <?php
-    phpinfo();
 
     include("logic.php");
 
