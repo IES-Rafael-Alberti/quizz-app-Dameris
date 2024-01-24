@@ -50,8 +50,8 @@
             if (in_array("q1", explode(", ", $_GET["q"])) && isset($_GET["q"])) {
                 echo '<p style="color: white; background-color: red;">This question must be answered.</p>';
             }
-            if (isset($_GET["success"]) && in_array('q1', explode(',', $_GET["success"]))) {
-                echo '<p style="color: green;">Good job, that\'s the right answer.</p>';
+            if (isset($_GET["success"]) && in_array("q1", explode(",", $_GET["success"]))) {
+                echo '<p style="color: white; background-color: green;">This question must be answered.</p>';
             }
             ?>
 
@@ -64,6 +64,16 @@
             <label><input type="radio" name="q2" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) &lt;href&gt;</label>
             <label><input type="radio" name="q2" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) &lt;a&gt; (Correcta)</label>
             <label><input type="radio" name="q2" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) &lt;hyperlink&gt;</label>
+
+            <?php
+            if (in_array("q2", explode(", ", $_GET["q"])) && isset($_GET["q"])) {
+                echo '<p style="color: white; background-color: red;">This question must be answered.</p>';
+            }
+            if (isset($_GET["success"]) && in_array("q2", explode(",", $_GET["success"]))) {
+                echo '<p style="color: white; background-color: green;">This question must be answered.</p>';
+            }
+            ?>
+
         </div>
 
         <!-- Question 3 -->
@@ -73,6 +83,16 @@
             <label><input type="radio" name="q3" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) Crear contenido web dinámico</label>
             <label><input type="radio" name="q3" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) Dar formato a la apariencia de los elementos web (Correcta)</label>
             <label><input type="radio" name="q3" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) Añadir interactividad a una página web</label>
+
+            <?php
+            if (in_array("q3", explode(", ", $_GET["q"])) && isset($_GET["q"])) {
+                echo '<p style="color: white; background-color: red;">This question must be answered.</p>';
+            }
+            if (isset($_GET["success"]) && in_array("q3", explode(",", $_GET["success"]))) {
+                echo '<p style="color: white; background-color: green;">This question must be answered.</p>';
+            }
+            ?>
+
         </div>
 
         <!-- Question 4 -->
@@ -82,6 +102,16 @@
             <label><input type="radio" name="q4" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) _myVariable (Correcta)</label>
             <label><input type="radio" name="q4" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) my-variable</label>
             <label><input type="radio" name="q4" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) var 123</label>
+
+            <?php
+            if (in_array("q4", explode(", ", $_GET["q"])) && isset($_GET["q"])) {
+                echo '<p style="color: white; background-color: red;">This question must be answered.</p>';
+            }
+            if (isset($_GET["success"]) && in_array("q4", explode(",", $_GET["success"]))) {
+                echo '<p style="color: white; background-color: green;">This question must be answered.</p>';
+            }
+            ?>
+
         </div>
 
         <!-- Question 5 -->
@@ -91,6 +121,16 @@
             <label><input type="radio" name="q5" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) Procesar la entrada del usuario</label>
             <label><input type="radio" name="q5" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) Hospedar y entregar contenido web a los clientes (Correcta)</label>
             <label><input type="radio" name="q5" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) Encriptar el tráfico web</label>
+
+            <?php
+            if (in_array("q5", explode(", ", $_GET["q"])) && isset($_GET["q"])) {
+                echo '<p style="color: white; background-color: red;">This question must be answered.</p>';
+            }
+            if (isset($_GET["success"]) && in_array("q5", explode(",", $_GET["success"]))) {
+                echo '<p style="color: white; background-color: green;">This question must be answered.</p>';
+            }
+            ?>
+
         </div>
 
         <!-- Question 6 -->
@@ -100,6 +140,16 @@
             <label><input type="radio" name="q6" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) &gl;ol&gt; (Correcta)</label>
             <label><input type="radio" name="q6" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) &gl;ul&gt;</label>
             <label><input type="radio" name="q6" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) &gl;li&gt;</label>
+
+            <?php
+            if (in_array("q6", explode(", ", $_GET["q"])) && isset($_GET["q"])) {
+                echo '<p style="color: white; background-color: red;">This question must be answered.</p>';
+            }
+            if (isset($_GET["success"]) && in_array("q6", explode(",", $_GET["success"]))) {
+                echo '<p style="color: white; background-color: green;">This question must be answered.</p>';
+            }
+            ?>
+
         </div>
 
         <!-- Question 7 -->
@@ -109,6 +159,16 @@
             <label><input type="radio" name="q7" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) Especificar el tipo de letra o estilo de fuente para el texto (Correcta)</label>
             <label><input type="radio" name="q7" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) Definir el color del texto</label>
             <label><input type="radio" name="q7" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) Controlar la alineación del texto</label>
+
+            <?php
+            if (in_array("q7", explode(", ", $_GET["q"])) && isset($_GET["q"])) {
+                echo '<p style="color: white; background-color: red;">This question must be answered.</p>';
+            }
+            if (isset($_GET["success"]) && in_array("q7", explode(",", $_GET["success"]))) {
+                echo '<p style="color: white; background-color: green;">This question must be answered.</p>';
+            }
+            ?>
+
         </div>
 
         <!-- Question 8 -->
@@ -118,6 +178,16 @@
             <label><input type="radio" name="q8" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) Python</label>
             <label><input type="radio" name="q8" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) PHP (Correcta)</label>
             <label><input type="radio" name="q8" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) HTML</label>
+
+            <?php
+            if (in_array("q8", explode(", ", $_GET["q"])) && isset($_GET["q"])) {
+                echo '<p style="color: white; background-color: red;">This question must be answered.</p>';
+            }
+            if (isset($_GET["success"]) && in_array("q8", explode(",", $_GET["success"]))) {
+                echo '<p style="color: white; background-color: green;">This question must be answered.</p>';
+            }
+            ?>
+
         </div>
 
         <!-- Question 9 -->
@@ -127,6 +197,16 @@
             <label><input type="radio" name="q9" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) Lenguaje de representación universal</label>
             <label><input type="radio" name="q9" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) Lenguaje de referencia único</label>
             <label><input type="radio" name="q9" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) Enlace de registro de usuario</label>
+
+            <?php
+            if (in_array("q9", explode(", ", $_GET["q"])) && isset($_GET["q"])) {
+                echo '<p style="color: white; background-color: red;">This question must be answered.</p>';
+            }
+            if (isset($_GET["success"]) && in_array("q9", explode(",", $_GET["success"]))) {
+                echo '<p style="color: white; background-color: green;">This question must be answered.</p>';
+            }
+            ?>
+
         </div>
 
         <!-- Question 10 -->
@@ -136,6 +216,16 @@
             <label><input type="radio" name="q10" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) 404 No encontrado</label>
             <label><input type="radio" name="q10" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) 500 Error interno del servidor</label>
             <label><input type="radio" name="q10" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) 302 Encontrado (Redirección)</label>
+
+            <?php
+            if (in_array("q10", explode(", ", $_GET["q"])) && isset($_GET["q"])) {
+                echo '<p style="color: white; background-color: red;">This question must be answered.</p>';
+            }
+            if (isset($_GET["success"]) && in_array("q10", explode(",", $_GET["success"]))) {
+                echo '<p style="color: white; background-color: green;">This question must be answered.</p>';
+            }
+            ?>
+
         </div>
 
         <input type="submit" value="Submit">
