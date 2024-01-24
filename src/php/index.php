@@ -1,15 +1,34 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Quiz 1</title>
-    <link rel="stylesheet" href="quiz1.css">
+    <title>Quizz PHP</title>
+    <link rel="stylesheet" href="/src/quizz.css">
+    
+    <?php
+    session_start();
+
+    $timer = 300;
+
+    if (!isset($_SESSION["start__time"]) || isset($_GET["restart"])) {
+        $_SESSION["start__time"] = time();
+    }
+
+    $elapsed__time = time() - $_SESSION["start__time"];
+    $remaining__time = max(0, $timer - $elapsed__time);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["restart__timer"])) {
+        header("Location: index.php");
+        $_SESSION["start__time"] = time();
+        exit();
+    }
+    ?>
 </head>
 
 <body>
-    <form action="/quizz-app-Dameris/Parte_1/php/process.php" method="post">
+    <form action="/src/php/process.php" method="post">
         <h1>PHP Quiz</h1>
 
         <!-- Question 1 -->
@@ -36,7 +55,7 @@
             <label><input type="radio" name="q3" value="a"> a) Definir la estructura de una página web</label>
             <label><input type="radio" name="q3" value="b"> b) Crear contenido web dinámico</label>
             <label><input type="radio" name="q3" value="c"> c) Dar formato a la apariencia de los elementos web (Correcta)</label>
-            <label><input type="radio" name="q3" value="d"> d)  Añadir interactividad a una página web</label>
+            <label><input type="radio" name="q3" value="d"> d) Añadir interactividad a una página web</label>
         </div>
 
         <!-- Question 4 -->
