@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizz PHP</title>
     <link rel="stylesheet" href="/src/quizz.css">
-    
+
     <?php
     session_start();
 
@@ -28,8 +28,15 @@
 </head>
 
 <body>
-    <form action="/src/php/process.php" method="post">
-        <h1>PHP Quiz</h1>
+    <form id="quizz__form" method="post" action="<?php echo isset($_GET["success"]) ? "||" : $_SERVER["SELF_PHP"]; ?>">
+        <h1>PHP Quizz</h1>
+        <div id="timer">Time remaining: 5:00</div>
+
+        <?php if (isset($_GET["success"])) {
+            $score = count(explode(", ", $_GET["success"]));
+
+            echo "<p><strong>Your score: $score / 10</strong></p>";
+        } ?>
 
         <!-- Question 1 -->
         <div class="question">
@@ -124,5 +131,17 @@
         <input type="submit" value="Submit">
     </form>
 </body>
+
+<?php
+// Include the Form__Handler class and quiz processing logic
+include "process.php";
+
+// Initialize the Form__Handler with correct answers
+$correct__answers = ["a", "c", "c", "b", "c", "b", "b", "c", "a", "a"];
+$Form__Handler = new Form__Handler($correctAnswers);
+
+// Handle form submission
+$Form__Handler->handleSubmission();
+?>
 
 </html>
