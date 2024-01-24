@@ -1,0 +1,14 @@
+# Use the latest MySQL image as the base
+FROM mysql:latest
+
+# Set the root password for MySQL (change it to a secure password)
+ENV MYSQL_ROOT_PASSWORD=mySecretPassword
+
+# Create a database for the quiz application
+ENV MYSQL_DATABASE=quiz_app
+
+# Copy SQL initialization scripts to the entrypoint directory
+COPY ./initSQL /docker-entrypoint-initdb.d
+
+# Expose MySQL port
+EXPOSE 3306
