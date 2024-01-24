@@ -41,91 +41,101 @@
         <!-- Question 1 -->
         <div class="question">
             <p>¿Qué significa HTML?</p>
-            <label><input type="radio" name="q1" value="a"> a) Lenguaje de marcado de hipertexto (Correcta)</label>
-            <label><input type="radio" name="q1" value="b"> b) Aprendizaje automático de alta tecnología</label>
-            <label><input type="radio" name="q1" value="c"> c) Lenguaje de transferencia hipertexto</label>
-            <label><input type="radio" name="q1" value="d"> d) Lenguaje de mensajería de texto para el hogar</label>
+            <label><input type="radio" name="q1" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>> a) Lenguaje de marcado de hipertexto (Correcta)</label>
+            <label><input type="radio" name="q1" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) Aprendizaje automático de alta tecnología</label>
+            <label><input type="radio" name="q1" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) Lenguaje de transferencia hipertexto</label>
+            <label><input type="radio" name="q1" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) Lenguaje de mensajería de texto para el hogar</label>
+
+            <?php
+            if (in_array("q1", explode(", ", $_GET["q"])) && isset($_GET["q"])) {
+                echo '<p style="color: white; background-color: red;">This question must be answered.</p>';
+            }
+            if (isset($_GET["success"]) && in_array('q1', explode(',', $_GET["success"]))) {
+                echo '<p style="color: green;">Good job, that\'s the right answer.</p>';
+            }
+            ?>
+
         </div>
 
         <!-- Question 2 -->
         <div class="question">
             <p>¿Qué etiqueta HTML se utiliza para crear un enlace?</p>
-            <label><input type="radio" name="q2" value="a"> a) &lt;link&gt;</code></label>
-            <label><input type="radio" name="q2" value="b"> b) &lt;href&gt;</label>
-            <label><input type="radio" name="q2" value="c"> c) &lt;a&gt; (Correcta)</label>
-            <label><input type="radio" name="q2" value="d"> d) &lt;hyperlink&gt;</label>
+            <label><input type="radio" name="q2" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>> a) &lt;link&gt;</code></label>
+            <label><input type="radio" name="q2" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) &lt;href&gt;</label>
+            <label><input type="radio" name="q2" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) &lt;a&gt; (Correcta)</label>
+            <label><input type="radio" name="q2" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) &lt;hyperlink&gt;</label>
         </div>
 
         <!-- Question 3 -->
         <div class="question">
             <p>¿Cuál es el propósito de CSS en el desarrollo web?</p>
-            <label><input type="radio" name="q3" value="a"> a) Definir la estructura de una página web</label>
-            <label><input type="radio" name="q3" value="b"> b) Crear contenido web dinámico</label>
-            <label><input type="radio" name="q3" value="c"> c) Dar formato a la apariencia de los elementos web (Correcta)</label>
-            <label><input type="radio" name="q3" value="d"> d) Añadir interactividad a una página web</label>
+            <label><input type="radio" name="q3" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>> a) Definir la estructura de una página web</label>
+            <label><input type="radio" name="q3" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) Crear contenido web dinámico</label>
+            <label><input type="radio" name="q3" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) Dar formato a la apariencia de los elementos web (Correcta)</label>
+            <label><input type="radio" name="q3" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) Añadir interactividad a una página web</label>
         </div>
 
         <!-- Question 4 -->
         <div class="question">
             <p>¿Cuál de las siguientes es una variable JavaScript válida?</p>
-            <label><input type="radio" name="q4" value="a"> a) 123var</label>
-            <label><input type="radio" name="q4" value="b"> b) _myVariable (Correcta)</label>
-            <label><input type="radio" name="q4" value="c"> c) my-variable</label>
-            <label><input type="radio" name="q4" value="d"> d) var 123</label>
+            <label><input type="radio" name="q4" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>> a) 123var</label>
+            <label><input type="radio" name="q4" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) _myVariable (Correcta)</label>
+            <label><input type="radio" name="q4" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) my-variable</label>
+            <label><input type="radio" name="q4" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) var 123</label>
         </div>
 
         <!-- Question 5 -->
         <div class="question">
             <p>¿Cuál es la función principal de un servidor web en el contexto del desarrollo web?</p>
-            <label><input type="radio" name="q5" value="a"> a) Mostrar anuncios en un sitio web</label>
-            <label><input type="radio" name="q5" value="b"> b) Procesar la entrada del usuario</label>
-            <label><input type="radio" name="q5" value="c"> c) Hospedar y entregar contenido web a los clientes (Correcta)</label>
-            <label><input type="radio" name="q5" value="d"> d) Encriptar el tráfico web</label>
+            <label><input type="radio" name="q5" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>> a) Mostrar anuncios en un sitio web</label>
+            <label><input type="radio" name="q5" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) Procesar la entrada del usuario</label>
+            <label><input type="radio" name="q5" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) Hospedar y entregar contenido web a los clientes (Correcta)</label>
+            <label><input type="radio" name="q5" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) Encriptar el tráfico web</label>
         </div>
 
         <!-- Question 6 -->
         <div class="question">
             <p>¿Qué etiqueta HTML se utiliza para crear una lista numerada (ordenada)?</p>
-            <label><input type="radio" name="q6" value="a"> a) &gl;list&gt;</label>
-            <label><input type="radio" name="q6" value="b"> b) &gl;ol&gt; (Correcta)</label>
-            <label><input type="radio" name="q6" value="c"> c) &gl;ul&gt;</label>
-            <label><input type="radio" name="q6" value="d"> d) &gl;li&gt;</label>
+            <label><input type="radio" name="q6" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>> a) &gl;list&gt;</label>
+            <label><input type="radio" name="q6" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) &gl;ol&gt; (Correcta)</label>
+            <label><input type="radio" name="q6" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) &gl;ul&gt;</label>
+            <label><input type="radio" name="q6" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) &gl;li&gt;</label>
         </div>
 
         <!-- Question 7 -->
         <div class="question">
-            <p>¿Cuál es el propósito de la propiedad CSS `font-family`?</p>
-            <label><input type="radio" name="q7" value="a"> a) Establecer el tamaño de la fuente del texto</label>
-            <label><input type="radio" name="q7" value="b"> b) Especificar el tipo de letra o estilo de fuente para el texto (Correcta)</label>
-            <label><input type="radio" name="q7" value="c"> c) Definir el color del texto</label>
-            <label><input type="radio" name="q7" value="d"> d) Controlar la alineación del texto</label>
+            <p>¿Cuál es el propósito de la propiedad CSS "font-family"?</p>
+            <label><input type="radio" name="q7" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>> a) Establecer el tamaño de la fuente del texto</label>
+            <label><input type="radio" name="q7" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) Especificar el tipo de letra o estilo de fuente para el texto (Correcta)</label>
+            <label><input type="radio" name="q7" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) Definir el color del texto</label>
+            <label><input type="radio" name="q7" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) Controlar la alineación del texto</label>
         </div>
 
         <!-- Question 8 -->
         <div class="question">
             <p>¿Qué lenguaje de programación se usa a menudo para el scripting del lado del servidor en el desarrollo web?</p>
-            <label><input type="radio" name="q8" value="a"> a) Java</label>
-            <label><input type="radio" name="q8" value="b"> b) Python</label>
-            <label><input type="radio" name="q8" value="c"> c) PHP (Correcta)</label>
-            <label><input type="radio" name="q8" value="d"> d) HTML</label>
+            <label><input type="radio" name="q8" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>> a) Java</label>
+            <label><input type="radio" name="q8" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) Python</label>
+            <label><input type="radio" name="q8" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) PHP (Correcta)</label>
+            <label><input type="radio" name="q8" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) HTML</label>
         </div>
 
         <!-- Question 9 -->
         <div class="question">
             <p>¿Qué significa el acrónimo "URL" en español?</p>
-            <label><input type="radio" name="q9" value="a"> a) Localizador uniforme de recursos (Correcta)</label>
-            <label><input type="radio" name="q9" value="b"> b) Lenguaje de representación universal</label>
-            <label><input type="radio" name="q9" value="c"> c) Lenguaje de referencia único</label>
-            <label><input type="radio" name="q9" value="d"> d) Enlace de registro de usuario</label>
+            <label><input type="radio" name="q9" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>> a) Localizador uniforme de recursos (Correcta)</label>
+            <label><input type="radio" name="q9" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) Lenguaje de representación universal</label>
+            <label><input type="radio" name="q9" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) Lenguaje de referencia único</label>
+            <label><input type="radio" name="q9" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) Enlace de registro de usuario</label>
         </div>
 
         <!-- Question 10 -->
         <div class="question">
             <p>¿Qué código HTTP indica una solicitud exitosa en el desarrollo web?</p>
-            <label><input type="radio" name="q10" value="a"> a) 200 OK (Correcta)</label>
-            <label><input type="radio" name="q10" value="b"> b) 404 No encontrado</label>
-            <label><input type="radio" name="q10" value="c"> c) 500 Error interno del servidor</label>
-            <label><input type="radio" name="q10" value="d"> d) 302 Encontrado (Redirección)</label>
+            <label><input type="radio" name="q10" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>> a) 200 OK (Correcta)</label>
+            <label><input type="radio" name="q10" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) 404 No encontrado</label>
+            <label><input type="radio" name="q10" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) 500 Error interno del servidor</label>
+            <label><input type="radio" name="q10" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) 302 Encontrado (Redirección)</label>
         </div>
 
         <input type="submit" value="Submit">
