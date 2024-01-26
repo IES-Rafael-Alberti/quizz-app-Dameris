@@ -1,3 +1,5 @@
+# PART 1
+
 # Dockerfile for a PHP image with Apache
 FROM php:apache
 

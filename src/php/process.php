@@ -1,3 +1,5 @@
+<!-- PART 1 -->
+
 <?php
 
 // Handle form submissions and evaluate answers against correct answers.
@@ -59,15 +61,15 @@ class Form__Handler
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $correct__answers = ["a", "c", "c", "b", "c", "b", "b", "c", "a", "a"];
+    $correct__answers = ["a", "c", "Dar formato a la apariencia de los elementos web", "b", "c", "b", "b", "c", "a", "a"];
 
     $answered__questions = array_keys($_POST);
-    $usanswered__questions = array_diff(array_map(function ($i) {
+    $unanswered__questions = array_diff(array_map(function ($i) {
         return "q" . $i;
     }, range(1, 10)), $answered__questions);
 
     if (count($answered__questions) !== count($correct__answers)) {
-        header("Location:quiz.php?q=" . implode(",", $usanswered__questions));
+        header("Location:quiz.php?q=" . implode(",", $unanswered__questions));
     } else {
         $Form__Handler = new Form__Handler($correct__answers);
         $Form__Handler->handleSubmission();

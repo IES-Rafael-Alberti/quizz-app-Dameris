@@ -1,3 +1,5 @@
+<!-- PART 2 -->
+
 <?php
 $server__name = getenv("DB_HOST");
 $user__name = getenv("DB_USER");

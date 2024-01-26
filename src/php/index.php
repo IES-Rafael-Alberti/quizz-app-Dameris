@@ -7,8 +7,12 @@
     <title>Quizz PHP</title>
     <link rel="stylesheet" href="/src/quizz.css">
 
+    <!-- PART 1 -->
+
     <?php
     session_start();
+    include("managerDatabase.php");
+    $html_safe_text = htmlspecialchars($text_question, ENT_QUOTES, 'UTF-8');
 
     $timer = 300;
 
@@ -25,6 +29,7 @@
         exit();
     }
     ?>
+
 </head>
 
 <body>
@@ -38,13 +43,14 @@
             echo "<p><strong>Your score: $score / 10</strong></p>";
         } ?>
 
+        <!-- PART 3 -->
         <!-- Question 1 -->
         <div class="question">
             <p>¿Qué significa HTML?</p>
-            <label><input type="radio" name="q1" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>> a) Lenguaje de marcado de hipertexto (Correcta)</label>
-            <label><input type="radio" name="q1" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) Aprendizaje automático de alta tecnología</label>
-            <label><input type="radio" name="q1" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) Lenguaje de transferencia hipertexto</label>
-            <label><input type="radio" name="q1" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) Lenguaje de mensajería de texto para el hogar</label>
+            <label><input type="radio" name="q1" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>>a) Lenguaje de marcado de hipertexto</label>
+            <label><input type="radio" name="q1" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>>b) Aprendizaje automático de alta tecnología</label>
+            <label><input type="radio" name="q1" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>>c) Lenguaje de transferencia hipertexto</label>
+            <label><input type="radio" name="q1" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>>d) Lenguaje de mensajería de texto para el hogar</label>
 
             <?php
             if (in_array("q1", explode(", ", $_GET["q"])) && isset($_GET["q"])) {
@@ -54,16 +60,15 @@
                 echo '<p style="color: white; background-color: green;">This question must be answered.</p>';
             }
             ?>
-
         </div>
 
         <!-- Question 2 -->
         <div class="question">
             <p>¿Qué etiqueta HTML se utiliza para crear un enlace?</p>
-            <label><input type="radio" name="q2" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>> a) &lt;link&gt;</code></label>
-            <label><input type="radio" name="q2" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) &lt;href&gt;</label>
-            <label><input type="radio" name="q2" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) &lt;a&gt; (Correcta)</label>
-            <label><input type="radio" name="q2" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) &lt;hyperlink&gt;</label>
+            <label><input type="radio" name="q2" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>>a) &lt;link&gt;</label>
+            <label><input type="radio" name="q2" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>>b) &lt;href&gt;</label>
+            <label><input type="radio" name="q2" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>>c) &lt;a&gt;</label>
+            <label><input type="radio" name="q2" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>>d) &lt;hyperlink&gt;</label>
 
             <?php
             if (in_array("q2", explode(", ", $_GET["q"])) && isset($_GET["q"])) {
@@ -73,16 +78,12 @@
                 echo '<p style="color: white; background-color: green;">This question must be answered.</p>';
             }
             ?>
-
         </div>
 
         <!-- Question 3 -->
         <div class="question">
             <p>¿Cuál es el propósito de CSS en el desarrollo web?</p>
-            <label><input type="radio" name="q3" value="a" <?php if (isset($_GET["success"])) echo "disabled" ?>> a) Definir la estructura de una página web</label>
-            <label><input type="radio" name="q3" value="b" <?php if (isset($_GET["success"])) echo "disabled" ?>> b) Crear contenido web dinámico</label>
-            <label><input type="radio" name="q3" value="c" <?php if (isset($_GET["success"])) echo "disabled" ?>> c) Dar formato a la apariencia de los elementos web (Correcta)</label>
-            <label><input type="radio" name="q3" value="d" <?php if (isset($_GET["success"])) echo "disabled" ?>> d) Añadir interactividad a una página web</label>
+            <input type="text" name="q3" value="q3" <?php if (isset($_GET["success"])) echo "disabled" ?> placeholder="Your answer here">
 
             <?php
             if (in_array("q3", explode(", ", $_GET["q"])) && isset($_GET["q"])) {
@@ -92,8 +93,8 @@
                 echo '<p style="color: white; background-color: green;">This question must be answered.</p>';
             }
             ?>
-
         </div>
+        <!-- END OF MODIFICATIONS FOR PART 3 -->
 
         <!-- Question 4 -->
         <div class="question">
@@ -237,7 +238,7 @@
 include "process.php";
 
 // Initialize the Form__Handler with correct answers
-$correct__answers = ["a", "c", "c", "b", "c", "b", "b", "c", "a", "a"];
+$correct__answers = ["a", "c", "Dar formato a la apariencia de los elementos web", "b", "c", "b", "b", "c", "a", "a"];
 $Form__Handler = new Form__Handler($correctAnswers);
 
 // Handle form submission
