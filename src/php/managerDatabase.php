@@ -1,15 +1,45 @@
 <!-- PART 2 -->
 
 <?php
-$server__name = getenv("DB_HOST");
-$user__name = getenv("DB_USER");
-$password = getenv("DB_PASSWORD");
-$database = getenv("DB_DATABASE");
+function getDbConnection()
+{
+    $server__host = getenv("database");
+    $username = getenv("user_db");
+    $password = getenv("Pestillo123");
+    $database = getenv("quizz_app");
 
-$connection = new mysqli($server__name, $user__name, $password, $database);
+    try {
+        $connection = new mysqli($server__host, $username, $password, $database);
 
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
+        if ($connection->connect_error) {
+            error_log('Connection failed: ' . $connection->connect_error);
+
+            throw new mysqli_sql_exception('Connection failed: ' . $connection->connect_error);
+        }
+
+        return $connection;
+    } catch (mysqli_sql_exception $e) {
+        error_log('Error: ' . $e->getMessage());
+        die('Error: ' . $e->getMessage());
+    }
+}
+
+function displayQuestions($connection)
+{
+    global $connection;
+    $sql = "SELECT * FROM QUESTIONS;";
+    $result = mysqli_query($connection, $sql);
+    while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+        <article class="question">
+            <p> <?= $row["id__question"], ". ", $row["questions__details"] ?> </p>
+            <label><input type="radio" name="q<?= $row["id__question"] ?>" value="a"> <?= $row["a"] ?> </label>
+            <label><input type="radio" name="q<?= $row["id__question"] ?>" value="b"> <?= $row["b"] ?> </label>
+            <label><input type="radio" name="q<?= $row["id__question"] ?>" value="c"> <?= $row["c"] ?> </label>
+            <label><input type="radio" name="q<?= $row["id__question"] ?>" value="d"> <?= $row["d"] ?> </label>
+        </article>
+        <?php
+    }
 }
 
 $script__sql = file_get_contents("tables__sql.sql");

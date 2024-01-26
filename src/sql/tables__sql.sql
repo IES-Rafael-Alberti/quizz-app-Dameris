@@ -26,4 +26,4 @@ CREATE TABLE IF NOT EXISTS OPTIONS (
 -- PART 3
 ALTER TABLE QUESTIONS
 ADD questions__type VARCHAR(255) NOT NULL
-ADD questions__details TEXT;
+ADD questions__details TEXT
