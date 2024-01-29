@@ -1,5 +1,4 @@
 <!-- PART 2 -->
-
 <?php
 function getDbConnection()
 {
