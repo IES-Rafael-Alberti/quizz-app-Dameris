@@ -1,5 +1,3 @@
--- PART 2
-
 -- Create the "quiz-app" schema if it doesn't exist
 CREATE SCHEMA IF NOT EXISTS "QUIZZ-APP";
 
